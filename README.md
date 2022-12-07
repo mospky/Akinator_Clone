@@ -2,9 +2,8 @@
 
 ## ToDo(編集中)
 - README作成
-  - 環境作成について
+  - 環境作成について(win編/Mac編)
   - 実施方法
-  - FraskとかpythonとかNumpyの情報
   - gitignore作成
 
 - 実装
@@ -15,14 +14,25 @@
   - 答えがなかった時の処理
   - ベイズの定理
 
-
 ## 仮想環境作成
-  - 
+  - 編集中
+  - 環境作成を記載するまでは、頑張って構築してください。
+  - pythonを導入して、仮想環境作成して、pipでjinjaをinstallして...etc
 
 ## 仮想環境に入る/抜ける
   - ```source venv/bin/activate```
   - ```deactivate```
 
-## flaskコマンド
+## app実施方法
   - appの場所を知らせてあげる  ```export FLASK_APP=flaskr```
   - app立ち上げ ```flask --debug run```
+  - http://127.0.0.1:5000/recommend/ にアクセス
+  - 質問が表示される。
+  - 質問を増やす場合、/flaskr/recommend.py のdata定義に質問とかを追加するだけ。
+
+## お役立ち情報
+- FraskとかpythonとかNumpyの参考になるURLを載せる
+- Fraskチュートリアル(https://msiz07-flask-docs-ja.readthedocs.io/ja/latest/tutorial/index.html)
+- 元ネタ（https://qiita.com/Hanull/items/e7a3e4e675dfb3b44a7d）
+- ...随時更新します。
+
