@@ -1,8 +1,17 @@
 # Akinator_Clone
 
-<h1>全体的に編集中</h1>
+## 概要
+アキネーターのクローンサイトを作ってみたくなりました。
 
-## ToDo（全体）
+## プロジェクトの状態
+下記URLの内容を画面に質問を表示し答えも表示できるようにしました。
+https://qiita.com/Hanull/items/e7a3e4e675dfb3b44a7d
+
+現状試す場合は、pythonの環境だけ整えて頂いて、recommend_org.pyを実行すればCLIレベルで確認できます。（もしくはflaskの環境を整えればGUIレベルで確認できるのですが...環境構築のReadMeを完成させるまでお待ちください。）
+
+また、READMEは編集中です。  
+
+## ToDo(全体)
 - README作成
   - 環境作成について(win編/Mac編)
   - 実施方法
@@ -18,9 +27,7 @@
 
 ## 環境構築
   - 編集中
-  - 環境作成を記載するまでは、頑張って構築してください。
   - pythonを導入して、仮想環境作成して、pipでjinjaをinstallして...etc
-  - 手早く試したい場合は、pythonの環境だけ整えて頂いて、recommend_org.pyを実行すればCLIレベルで確認できます。
 
 ## 仮想環境に入る/抜ける
   - ```source venv/bin/activate```
