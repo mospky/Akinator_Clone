@@ -1,15 +1,12 @@
 # Akinator_Clone
 
 ## 概要
-アキネーターのクローンサイトを作ってみたくなりました。
+アキネーター<https://jp.akinator.com>のクローンサイトを作る。
 
-## プロジェクトの状態
 下記URLの内容を画面に質問を表示し答えも表示できるようにしました。
 https://qiita.com/Hanull/items/e7a3e4e675dfb3b44a7d
 
-現状試す場合は、pythonの環境だけ整えて頂いて、recommend_org.pyを実行すればCLIレベルで確認できます。（もしくはflaskの環境を整えればGUIレベルで確認できるのですが...環境構築のReadMeを完成させるまでお待ちください。）
-
-また、READMEは編集中です。  
+README編集中。  
 
 ## ToDo(全体)
 - README作成
@@ -26,25 +23,38 @@ https://qiita.com/Hanull/items/e7a3e4e675dfb3b44a7d
   - ベイズの定理（解答者が間違う可能性を考慮したもの）
 
 ## 環境構築
-  - 編集中
-  - pythonを導入して、仮想環境作成して、pipでjinjaをinstallして...etc
+### win10 win11 
+- pythonの公式サイトから最新版をダウンロード<https://pythonlinks.python.jp/ja/index.html>
+  （環境パス設定するようにチェックを入れる）
+- 任意のdir作成
+- git clone <レポジトリのURL>
+- source venv/bin/activate
+- ```pip install flask```
+- ```pip install numpy```
+- ```pip install pandas```
 
-## 仮想環境に入る/抜ける
-  - ```source venv/bin/activate```
-  - ```deactivate```
+### Linux環境（Mac等）
+- 編集中
 
-## app実施方法
+## 使い方
+  - ```source venv/bin/activate``` 仮想環境にはいる
+  - ```deactivate```　仮想環境から抜ける
   - appの場所を知らせてあげる  ```export FLASK_APP=flaskr```
   - app立ち上げ ```flask --debug run```
-  - http://127.0.0.1:5000/recommend/ にアクセス
+  - http://127.0.0.1:5000/ にアクセス
+  - urlに/recommend/ を追加してアクセス
   - 質問が表示される。
-  - 質問を増やす場合、/flaskr/recommend.py のdata定義に質問とかを追加するだけ。
 
 ## お役立ち情報
 - FraskとかpythonとかNumpyの参考になるURLを載せる
 - Fraskチュートリアル(https://msiz07-flask-docs-ja.readthedocs.io/ja/latest/tutorial/index.html)
 - 元ネタ（https://qiita.com/Hanull/items/e7a3e4e675dfb3b44a7d）
-- ...随時更新します。
+- 随時更新する。
 
 ## Memo
 - 
+
+## Auther
+
+## Licence
+
