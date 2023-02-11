@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 
+from flask_bootstrap import Bootstrap
 
 def create_app(test_config=None):
     # create and configure the app
@@ -11,7 +12,7 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
-    
+    bootstrap = Bootstrap(app)
 
     #DEBUG
     str = "DEBUG : " + "__name__ = " + __name__
@@ -44,13 +45,13 @@ def create_app(test_config=None):
     app.register_blueprint(auth.bp)
 
     # 
-    from . import blog
-    app.register_blueprint(blog.bp)
-    app.add_url_rule('/blog', endpoint='index')
-
-    # 
     from . import recommend
     app.register_blueprint(recommend.bp)
     app.add_url_rule('/', endpoint='recommend')
+
+    # 
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule('/blog', endpoint='index')
 
     return app

@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+
+{% extends 'bootstrap/base.html' %}
 
 {% block header %}
   <h1>アキネーター</h1>
@@ -14,5 +15,15 @@
           <a class="action" href="{{ url_for('recommend.update', choice='n') }}">No</a>
       </div>
     </header>
+    <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
   </article>
 {% endblock %}

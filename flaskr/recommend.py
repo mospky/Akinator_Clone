@@ -22,7 +22,6 @@ selected_column = ""
 
 bp = Blueprint('recommend', __name__)
 
-# @bp.route('/recommend')
 @bp.route('/')
 def index():
     global selected_data
@@ -34,7 +33,6 @@ def index():
     return render_template('recommend/index.html', que=d)
 
 
-# @bp.route('/recommend/<string:choice>/update', methods=('GET', 'POST'))
 @bp.route('/<string:choice>/update', methods=('GET', 'POST'))
 def update(choice):
   global selected_data
