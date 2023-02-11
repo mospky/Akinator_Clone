@@ -11,6 +11,9 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
+    # bootstrap
+    # bootstrap = Bootstrap(app)
+
     #DEBUG
     str = "DEBUG : " + "__name__ = " + __name__
     print(str)
@@ -42,13 +45,14 @@ def create_app(test_config=None):
     app.register_blueprint(auth.bp)
 
     # 
-    from . import blog
-    app.register_blueprint(blog.bp)
-    app.add_url_rule('/', endpoint='index')
-
-    # 
     from . import recommend
     app.register_blueprint(recommend.bp)
-    # app.add_url_rule('/recommend', endpoint='recommend')
+    app.add_url_rule('/', endpoint='recommend')
+
+    # 
+    from . import blog
+    app.register_blueprint(blog.bp)
+    # app.add_url_rule('/', endpoint='index')
+    app.add_url_rule('/blog', endpoint='index')
 
     return app

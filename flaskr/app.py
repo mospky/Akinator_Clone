@@ -2,15 +2,17 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
+
+from flaskr.auth import login_required
 from flaskr.db import get_db
 
 from typing import Tuple
-
 import pandas as pd
 import numpy as np
 import math
 
-###
+bp = Blueprint('app', __name__)
+
 d = {"name": "0"}
 data = [{'title': 'VTuberのゲーム実況ライブ', 'ライブ配信': True,  'VTuber': True,  'ゲーム実況': True},
         {'title': 'VTuberの料理配信ライブ',   'ライブ配信': True,  'VTuber': True,  'ゲーム実況': False},
@@ -20,9 +22,6 @@ data = [{'title': 'VTuberのゲーム実況ライブ', 'ライブ配信': True, 
 selected_data = []
 selected_column = ""
 
-bp = Blueprint('recommend', __name__)
-
-# @bp.route('/recommend')
 @bp.route('/')
 def index():
     global selected_data
@@ -34,7 +33,6 @@ def index():
     return render_template('recommend/index.html', que=d)
 
 
-# @bp.route('/recommend/<string:choice>/update', methods=('GET', 'POST'))
 @bp.route('/<string:choice>/update', methods=('GET', 'POST'))
 def update(choice):
   global selected_data
