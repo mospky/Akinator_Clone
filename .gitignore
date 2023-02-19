@@ -2,7 +2,8 @@ venv/
 
 *.pyc
 __pycache__/
-views/__pycache__/
+./flask/__pycache__/
+./flask/views/__pycache__/
 
 instance/
 
