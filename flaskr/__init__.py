@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, jsonify
 
 def create_app(test_config=None):
     # create and configure the app
@@ -20,7 +20,7 @@ def create_app(test_config=None):
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
+        app.config.from_pyfile('development.py', silent=True)
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
@@ -32,21 +32,20 @@ def create_app(test_config=None):
         pass
 
     # DB 初期化
-    from . import db
+    from .views import db
     db.init_app(app)
 
-    # 以下、routing???
-    # 
-    from . import auth
+    #
+    from .views import auth
     app.register_blueprint(auth.bp)
 
     # 
-    from . import recommend
+    from .views import recommend
     app.register_blueprint(recommend.bp)
     app.add_url_rule('/', endpoint='recommend')
 
     # 
-    from . import blog
+    from .views import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/blog', endpoint='index')
 
