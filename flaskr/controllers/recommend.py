@@ -2,7 +2,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
-from flaskr.views.db import get_db
+from flaskr.controllers.db import get_db
 
 from typing import Tuple
 
@@ -29,13 +29,32 @@ bp = Blueprint('recommend', __name__)
 
 @bp.route('/')
 def index():
+
+    # 1 : DBから取得
+    db = get_db()
+    title = db.execute(
+        'SELECT * FROM TITLE'
+    ).fetchall()
+
+    # 2 : DataFrame用に変換？
+    for row in title:
+      print(row[1])
+
+    print(row[1])
+
+    df_title = pd.DataFrame(title)
+    print(df_title)
+
+    
+
+    # 3 : 選択アルゴリズム
     global selected_data
 
     df = pd.DataFrame(data)
 
     selected_data, d['name'] = recommend(df, 0)
 
-    return render_template('recommend/index.html', que=d)
+    return render_template('recommend/index.html', que=d, test=title)
 
 
 @bp.route('/<string:choice>/update', methods=('GET', 'POST'))

@@ -1,29 +1,62 @@
-
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>アキネーター</h1>
-  <a class="action" href="{{ url_for('recommend.index') }}">New</a>
+<h1>アキネーター</h1>
+<a class="action" href="{{ url_for('recommend.index') }}">New</a>
 {% endblock %}
 
 {% block content %}
-  <article class="post">
-    <header>
-      <div>
-        <p class="action">{{ que.name }}</p>
-          <a class="action" href="{{ url_for('recommend.update', choice='y') }}">Yes</a>
-          <a class="action" href="{{ url_for('recommend.update', choice='n') }}">No</a>
+<div class=".mx-auto container ">
+  <div class="row">
+    <div class="col-4 card-body">
+      <div class="col-12">
+        <img class="h-50 img-responsive" src="static/img/defi.png">
       </div>
-    </header>
-    <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+    </div>
+    <div class="col-4 card-body">
+      <div class="col-12 card-body">
+        <div class="col-1 bubble-tail">
+          <p class="question-number">1</p>
+        </div>
+        <div class="col-11 selector dialog-box  text-center">
+          <p class="action">{{ que.name }}</p>
+        </div>
+      </div>
+      <div class="col-12 card-body">
+        <div class="w -100 p-0 database-selection selector dialog-box">
+          <ul>
+            <li>
+              <a href="{{ url_for('recommend.update', choice='y') }}" id="a_yes" class="action">はい</a>
+            </li>
+            <li>
+              <a href="{{ url_for('recommend.update', choice='n') }}" id="a_no" class="action">いいえ</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" id="a_dont_know">分からない</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" id="a_probably">たぶんそう部分的にそう</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" id="a_probaly_not">たぶん違う そうでもない</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 card-body"></div>
+  </div>
+</div>
 
-<button type="button" class="btn btn-link">Link</button>
-  </article>
+<div class="row">
+
+  <div class="col-4 card-body">
+      {% for order in test %}
+        <li><h2>{{ order[1] }}</h2></li>
+      {% endfor %}
+    </header>
+  </div>
+</div>
+</div>
+</article>
 {% endblock %}
