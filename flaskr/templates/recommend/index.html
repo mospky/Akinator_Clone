@@ -14,13 +14,11 @@
       </div>
     </div>
     <div class="col-4 card-body">
-      <div class="col-12 card-body">
-        <div class="col-1 bubble-tail">
-          <p class="question-number">1</p>
-        </div>
-        <div class="col-11 selector dialog-box  text-center">
-          <p class="action">{{ que.name }}</p>
-        </div>
+      <div class="col-12 card-body bubble-question bubble">
+        <div class="bubble-question bubble"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="85" height="102"><polygon points="30,0 30,20 29,25 27,30 22,37 15,45 0,60 30,60 30,102 85,102 85,0"></polygon></svg>
+            <div class="bubble-tail"><p class="question-number">1</p></div>
+            <div class="bubble-body"><p class="question-text">{{ que.name }}</p></div>
+        </div>        
       </div>
       <div class="col-12 card-body">
         <div class="w -100 p-0 database-selection selector dialog-box">
@@ -47,16 +45,4 @@
     <div class="col-4 card-body"></div>
   </div>
 </div>
-
-<div class="row">
-
-  <div class="col-4 card-body">
-      {% for order in test %}
-        <li><h2>{{ order[1] }}</h2></li>
-      {% endfor %}
-    </header>
-  </div>
-</div>
-</div>
-</article>
 {% endblock %}
