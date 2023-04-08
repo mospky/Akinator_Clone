@@ -1,11 +1,12 @@
-venv/
-
 *.pyc
+
 __pycache__/
-./flask/__pycache__/
-./flask/views/__pycache__/
+./flaskr/__pycache__/
+./flaskr/views/__pycache__/
+./flaskr/controllers/__pycache__/
 
 instance/
+venv/
 
 .pytest_cache/
 .coverage
