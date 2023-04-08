@@ -28,21 +28,20 @@ README編集中。
   （環境パス設定するようにチェックを入れる）
 - 任意のdir作成
 - git clone <レポジトリのURL>
+- python3 -m venv venv
 - source venv/bin/activate
-- ```pip install flask```
-- ```pip install numpy```
-- ```pip install pandas```
 
 ### Linux環境（Mac等）
 - 編集中
 
 ## 使い方
   - ```source venv/bin/activate``` 仮想環境にはいる
+  - ```pip install -r requirements.txt``` パッケージ一括インストール
   - ```deactivate```　仮想環境から抜ける
   - appの場所を知らせてあげる  ```export FLASK_APP=flaskr```
-  - app立ち上げ ```flask --debug run```
+  - appの場所を知らせてあげる  ```export FLASK_ENV=development```
+  - app立ち上げ ```flask run```
   - http://127.0.0.1:5000/ にアクセス
-  - urlに/recommend/ を追加してアクセス
   - 質問が表示される。
 
 ## お役立ち情報

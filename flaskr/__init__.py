@@ -7,8 +7,11 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        DATABASE=os.path.join(app.instance_path, 'game.db'),
     )
+
+     # DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+    #  DATABASE=os.path.join(app.instance_path, 'game.db'),
 
     #DEBUG
     str = "DEBUG : " + "__name__ = " + __name__
@@ -32,21 +35,21 @@ def create_app(test_config=None):
         pass
 
     # DB 初期化
-    from .views import db
+    from .controllers import db
     db.init_app(app)
 
-    #
-    from .views import auth
+    # 
+    from .controllers import auth
     app.register_blueprint(auth.bp)
 
     # 
-    from .views import recommend
+    from .controllers import recommend
     app.register_blueprint(recommend.bp)
     app.add_url_rule('/', endpoint='recommend')
 
     # 
-    from .views import blog
+    from .controllers import blog
     app.register_blueprint(blog.bp)
-    app.add_url_rule('/blog', endpoint='index')
+    app.add_url_rule('/blog', endpoint='blog')
 
     return app

@@ -3,8 +3,8 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from flaskr.views.auth import login_required
-from flaskr.views.db import get_db
+from flaskr.controllers.auth import login_required
+from flaskr.controllers.db import get_db
 
 bp = Blueprint('blog', __name__)
 
@@ -16,6 +16,7 @@ def index():
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
+
     return render_template('blog/index.html', posts=posts)
 
 @bp.route('/create', methods=('GET', 'POST'))
